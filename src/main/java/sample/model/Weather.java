@@ -1,7 +1,5 @@
 package sample.model;
 
-import java.time.LocalDateTime;
-
 /**
  * Created by gosc on 17.11.2016.
  */
@@ -9,25 +7,37 @@ public class Weather {
 
 
     private double temperatureInCelcius;
-    private LocalDateTime lastUpdated;
+    private String lastUpdated;
     private double feelsLikeTemperatureInCelcius;
-    private String iconUrl;
     private boolean isDay;
     private double pressureMB;
     private String location;
     private WeatherCondition weatherCondition;
 
+    @Override
+    public String toString() {
+        return "Weather{" +
+                "temperatureInCelcius=" + temperatureInCelcius +
+                ", lastUpdated=" + lastUpdated +
+                ", feelsLikeTemperatureInCelcius=" + feelsLikeTemperatureInCelcius +
+                ", isDay=" + isDay +
+                ", pressureMB=" + pressureMB +
+                ", location='" + location + '\'' +
+                ", weatherCondition=" + weatherCondition +
+                '}';
+    }
 
-    public Weather(double temperatureInCelcius, WeatherCondition weatherCondition, double pressureMB, boolean isDay, String iconUrl, LocalDateTime lastUpdated, double feelsLikeTemperatureInCelcius, String location) {
+    public Weather(double temperatureInCelcius, WeatherCondition weatherCondition, double pressureMB, boolean isDay, String lastUpdated, double feelsLikeTemperatureInCelcius, String location) {
         this.temperatureInCelcius = temperatureInCelcius;
         this.weatherCondition = weatherCondition;
         this.pressureMB = pressureMB;
         this.isDay = isDay;
-        this.iconUrl = iconUrl;
         this.lastUpdated = lastUpdated;
         this.feelsLikeTemperatureInCelcius = feelsLikeTemperatureInCelcius;
         this.location = location;
     }
+
+        public Weather(){}
 
     public WeatherCondition getWeatherCondition() {
         return weatherCondition;
@@ -69,13 +79,6 @@ public class Weather {
         isDay = day;
     }
 
-    public String getIconUrl() {
-        return iconUrl;
-    }
-
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
-    }
 
     public double getFeelsLikeTemperatureInCelcius() {
         return feelsLikeTemperatureInCelcius;
@@ -85,11 +88,11 @@ public class Weather {
         this.feelsLikeTemperatureInCelcius = feelsLikeTemperatureInCelcius;
     }
 
-    public LocalDateTime getLastUpdated() {
+    public String getLastUpdated() {
         return lastUpdated;
     }
 
-    public void setLastUpdated(LocalDateTime lastUpdated) {
+    public void setLastUpdated(String lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
 }
