@@ -5,13 +5,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:controller="sample.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <Label fx:id="cityLabel" layoutX="95.0" layoutY="70.0" prefHeight="17.0" prefWidth="130.0" text="04-193 Warszawa" />
       <Label fx:id="dateLabel" layoutX="95.0" layoutY="120.0" prefHeight="17.0" prefWidth="130.0" text="Piatek, 11:00" />
       <Label fx:id="textConditionLabel" layoutX="95.0" layoutY="172.0" prefHeight="17.0" prefWidth="130.0" text="Liczby przejsciowe" />
-      <Label fx:id="temperatureLabel" layoutX="182.0" layoutY="209.0" prefHeight="51.0" prefWidth="161.0" text="8 °C">
+      <Label fx:id="temperatureLabel" layoutX="182.0" layoutY="209.0" prefHeight="51.0" prefWidth="161.0" text="8 C">
          <font>
             <Font size="40.0" />
          </font>
