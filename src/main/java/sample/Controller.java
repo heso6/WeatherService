@@ -3,6 +3,7 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import sample.model.Weather;
 import sample.service.WeatherServiceJsonOrg;
@@ -40,6 +41,8 @@ public class Controller implements Initializable {
         cityLabel.setText(currentWeather.getLocation());
         temperatureLabel.setText(String.valueOf(currentWeather.getFeelsLikeTemperatureInCelcius()));
         textConditionLabel.setText(currentWeather.getWeatherCondition().getText());
+        Image image = new Image("http"+currentWeather.getWeatherCondition().getIconUrl(), true);
+        iconImageView.setImage(image);
     }
 
 
