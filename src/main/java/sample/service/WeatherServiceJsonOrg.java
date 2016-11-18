@@ -8,9 +8,6 @@ import sample.model.WeatherCondition;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.time.LocalDateTime;
-
-import static javax.swing.UIManager.getInt;
 
 /**
  * Created by michalos on 17.11.2016.
@@ -38,7 +35,7 @@ public class WeatherServiceJsonOrg implements WeatherService {
             JSONObject currentWeather = json.getJSONObject("current");
             String location = city;
             double temperatureInCelsius = currentWeather.getDouble("temp_c");
-            //LocalDateTime lastUpdated = LocalDateTime.parse(currentWeather.getString("last_updated"));
+            String lastUpdated = currentWeather.getString("last_updated");
             boolean isDay = currentWeather.getInt("is_day")==1 ? true : false;
             double feelsLikeTemperatureInCelsius = currentWeather.getDouble("feelslike_c");
             double pressureMB = currentWeather.getDouble("pressure_mb");
@@ -50,7 +47,7 @@ public class WeatherServiceJsonOrg implements WeatherService {
             WeatherCondition weatherCondition = new WeatherCondition(conditionText,iconUrl,code);
             weather.setDay(isDay);
             weather.setWeatherCondition(weatherCondition);
-            //  weather.setLastUpdated(lastUpdated);
+            weather.setLastUpdated(lastUpdated);
             weather.setTemperatureInCelcius(temperatureInCelsius);
             weather.setLocation(location);
             weather.setPressureMB(pressureMB);
